@@ -1,17 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+import './index.css'
+import NewTaskForm from "./components/NewTaskForm/NewTaskForm";
+import TaskList from "./components/TaskList/TaskList";
+import Footer from "./components/Footer/Footer";
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const App = () => {
+  return (
+      <section className="todoapp">
+        <header className="header">
+          <h1>todos</h1>
+          <NewTaskForm />
+        </header>
+        <section className="main">
+          <TaskList />
+          <Footer />
+        </section>
+      </section>
+  )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))
