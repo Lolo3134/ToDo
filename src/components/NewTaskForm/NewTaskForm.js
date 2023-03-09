@@ -10,27 +10,21 @@ export default class NewTaskForm extends React.Component {
     }
 
     onLabelChange = e => {
-        const regexp = /^\s*$/
-        if (regexp.test(e.target.value) === true) {
-            throw new Error('Пустая строка')
-        } else {
             this.setState({
                 label: e.target.value
             })
-        }
-
-    }
-
-    onSubmit = e => {
-        e.preventDefault()
-        const { label } = this.state
-        this.setState({ label: '' });
-        this.props.addItem(label)
     }
 
     render() {
+        const { addItem } = this.props
+        const onSubmit = e => {
+            e.preventDefault();
+            if (this.state.label.trim()) addItem(this.state.label);
+            this.setState({ value: '' });
+        }
+
         return (
-        <form onSubmit={this.onSubmit}>
+        <form onSubmit={ onSubmit }>
             <input className="new-todo" placeholder="What needs to be done?" autoFocus
                      value={this.state.label}
                      onChange={this.onLabelChange}
