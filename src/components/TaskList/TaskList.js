@@ -5,10 +5,8 @@ import './TaskList.css';
 import Task from '../Task/Task';
 
 export default class TaskList extends React.Component {
-
-
   render() {
-    const { todos, changeCheck, editItem, deletedItem } = this.props
+    const { todos, changeCheck, editItem, deletedItem } = this.props;
 
     const el = todos.map((item) => {
       return <Task todo={item} key={item.id} deleteItem={deletedItem} changeCheck={changeCheck} editItem={editItem} />;

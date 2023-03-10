@@ -58,13 +58,13 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged --relative"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.{ts,js}": [
       "npm run lint:fix",
-      "git add"
+      "git push"
     ]
   }
 }
