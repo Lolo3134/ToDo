@@ -32,7 +32,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint ./src",
-    "lint:fix": "eslint ./src --fix --color"
+    "lint:fix": "eslint ./src --fix --color",
+    "format": "prettier ./src"
   },
   "eslintConfig": {
     "extends": [
@@ -57,11 +58,11 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged --relative"
     }
   },
   "lint-staged": {
-    "*.js": [
+    "*.{ts,js}": [
       "npm run lint:fix",
       "git add"
     ]
