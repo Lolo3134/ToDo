@@ -48,7 +48,7 @@ export default class Task extends React.Component {
           </label>
           <button
             type="button"
-            onClick={() => this.setState(({ editing }) => ({ editing: !editing, value: this.props.todo.body }))}
+            onClick={() => this.setState(({ editing }) => ({ editing: !editing, value: this.props.todo.label }))}
             className="icon icon-edit"
           />
           <button type="button" onClick={() => deleteItem(id)} className="icon icon-destroy" />

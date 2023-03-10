@@ -14,15 +14,6 @@ export default class App extends React.Component {
     };
   }
 
-  // createItem(label) {
-  //   return {
-  //     label: label,
-  //     checked: false,
-  //     id: this.state.todoData.length + 1,
-  //     date: new Date(),
-  //   };
-  // }
-
   deleteItem(id) {
     this.setState(({ todoData }) => {
       const idx = todoData.findIndex((el) => el.id === id);
